@@ -1,0 +1,191 @@
+{
+  "project_specifications": {
+    "project_info": {
+      "name": "Not yet decided",
+      "description": "Initial project created from a starter template with a landing page",
+      "role": "Not yet decided",
+      "target_users": "Not yet decided"
+    },
+
+    "project_type": {
+      "category": "not_decided",
+      "rendering": "not_decided",
+      "interactivity_level": "not_decided"
+    },
+
+    "technical_details": {
+      "framework": "Next.js",
+      "router": "app_router",
+      "language": "TypeScript",
+      "styling": "Tailwind CSS",
+      "ui_library": "shadcn",
+      "state_management": "redux"
+    },
+
+    "routing_conventions": {
+      "page_pattern": "app/{route}/page.tsx",
+      "layout_pattern": "app/{route}/layout.tsx",
+      "default_page": "landing"
+    },
+
+    "folder_structure": [
+      {
+        "name": "app",
+        "role": "routing_and_page_composition",
+        "description": "Defines application routes, layouts, and page-level composition",
+        "ownership": "user_project",
+        "allowed_operations": ["add_route", "modify_page", "modify_layout"]
+      },
+      {
+        "name": "components",
+        "role": "ui_components",
+        "description": "Reusable UI components and page sections",
+        "ownership": "user_project",
+        "allowed_operations": [
+          "add_component",
+          "modify_component",
+          "add_subfolder"
+        ]
+      },
+      {
+        "name": "hooks",
+        "role": "stateful_logic",
+        "description": "Custom React hooks encapsulating reusable stateful behavior",
+        "ownership": "user_project",
+        "allowed_operations": ["add_hook", "modify_hook"]
+      },
+      {
+        "name": "services",
+        "role": "business_services",
+        "description": "Application services coordinating data flow and business logic",
+        "ownership": "user_project",
+        "allowed_operations": ["add_service", "modify_service"]
+      },
+      {
+        "name": "lib",
+        "role": "core_logic",
+        "description": "Core application logic and shared non-UI utilities",
+        "ownership": "user_project",
+        "allowed_operations": ["add_module", "modify_module"]
+      },
+      {
+        "name": "utils",
+        "role": "pure_utilities",
+        "description": "Stateless helper functions and constants",
+        "ownership": "user_project",
+        "allowed_operations": ["add_utility", "modify_utility"]
+      },
+      {
+        "name": "api",
+        "role": "backend_routes",
+        "description": "Server-side API route handlers",
+        "ownership": "user_project",
+        "allowed_operations": ["add_route", "modify_route"]
+      },
+      {
+        "name": "infra",
+        "role": "external_integrations",
+        "description": "Infrastructure and external service integrations (AI, DB, auth)",
+        "ownership": "platform_system",
+        "allowed_operations": [],
+        "restrictions": ["no_modification", "no_file_creation", "no_deletion"]
+      }
+    ],
+
+    "quality_constraints": {
+      "seo_required": true,
+      "accessibility_required": true,
+      "mobile_first": true,
+      "performance_priority": "medium"
+    }
+  },
+
+  "project_structure": {
+    "navigation": {
+      "routes": {
+        "/": {
+          "page_id": "landing_page",
+          "layout_id": "root_layout"
+        }
+      },
+
+      "pages": {
+        "landing_page": {
+          "route": "/",
+          "file": "app/landing/page.tsx",
+          "description": "Landing page"
+        }
+      },
+
+      "layouts": {
+        "root_layout": {
+          "file": "app/landing/layout.tsx",
+          "description": "Landing page layout"
+        }
+      }
+    },
+    "ui_capabilities": {
+      "components": {
+        "Navbar": {
+          "kind": "ui_element",
+          "file": "components/ui/Navbar.tsx",
+          "description": "Top navigation bar",
+          "used_in": {
+            "pages": ["landing_page"],
+            "layouts": ["root_layout"],
+            "components": []
+          },
+          "uses": ["Button", "Logo"]
+        },
+
+        "HeroSection": {
+          "kind": "section",
+          "file": "components/sections/HeroSection.tsx",
+          "description": "Hero section for marketing pages",
+          "used_in": {
+            "pages": ["landing_page"]
+          },
+          "uses": ["Button"]
+        }
+      },
+
+      "allowed_ui_primitives": {
+        "button": {
+          "source": "shadcn",
+          "file": "components/ui/button.tsx"
+        },
+        "card": {
+          "source": "shadcn",
+          "file": "components/ui/card.tsx"
+        },
+        "input": {
+          "source": "shadcn",
+          "file": "components/ui/input.tsx"
+        }
+      }
+    },
+    "logic_capabilies": {
+      "services": {},
+      "hooks": {},
+      "lib": {},
+      "utils": {}
+    },
+    "infra": [
+      {
+        "platform": "supabase",
+        "type": "db",
+        "required_keys": ["SUPABASE_URL", "SUPABASE_ANON_KEY"]
+      },
+      {
+        "platform": "gemini",
+        "type": "ai",
+        "required_keys": ["GEMINI_API_KEY"]
+      },
+      {
+        "platform": "gcs",
+        "type": "document store",
+        "required_keys": ["GOOGLE_CLOUD_KEY"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "tasks": [
+    {
+      "task_id": "t1",
+      "task_type": "ui_task",
+      "intent": "add_section",
+      "description": "Add a hero section to the landing page",
+      "content": {
+        "headline": "Delicious Food, Delivered Fresh",
+        "subheadline": "Experience restaurant-quality meals made with fresh ingredients and delivered to your doorstep.",
+        "primary_cta": {
+          "label": "Order Now",
+          "action": "navigate_to_menu"
+        },
+        "secondary_cta": {
+          "label": "View Menu",
+          "action": "scroll_to_section"
+        }
+      },
+      "page": "landing",
+      "new_feature_name":"hero",
+      "feature": "",
+      "service": "",
+      "component_id": ""
+    },
+    {
+      "task_id": "t2",
+      "task_type": "ui_task",
+      "intent": "add_section",
+      "description": "Introduce a pricing section below the hero section",
+      "content": {
+        "plans": [
+          {
+            "name": "Basic",
+            "price": "$9.99",
+            "description": "Perfect for individuals trying us for the first time",
+            "features": ["1 meal per day", "Standard delivery", "Email support"]
+          },
+          {
+            "name": "Standard",
+            "price": "$19.99",
+            "description": "Best for regular customers",
+            "features": [
+              "2 meals per day",
+              "Priority delivery",
+              "Email and chat support"
+            ]
+          },
+          {
+            "name": "Premium",
+            "price": "$29.99",
+            "description": "Ideal for families and heavy users",
+            "features": [
+              "Unlimited meals",
+              "Free delivery",
+              "24/7 priority support"
+            ]
+          }
+        ],
+        "highlight_plan": "Standard"
+      },
+      "page": "landing",
+      "new_feature_name":"pricing",
+      "feature": "",
+      "service": "",
+      "component_id": ""
+    },
+    {
+      "task_id": "t3",
+      "task_type": "ui_task",
+      "intent": "add_page",
+      "description": "Add an about us page",
+      "content": {
+        "sections": [
+          {
+            "title": "Our Story",
+            "text": "We started with a simple idea: make great food accessible to everyone without compromising on quality."
+          },
+          {
+            "title": "Our Mission",
+            "text": "To deliver fresh, delicious meals while supporting local producers and sustainable practices."
+          },
+          {
+            "title": "Why Choose Us",
+            "bullets": [
+              "Fresh ingredients sourced daily",
+              "Experienced chefs",
+              "Fast and reliable delivery"
+            ]
+          }
+        ]
+      },
+      "page": "",
+      "feature": "about_page",
+      "service": "",
+      "component_id": ""
+    }
+  ]
+}
