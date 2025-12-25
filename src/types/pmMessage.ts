@@ -2,7 +2,7 @@ export interface pmMessage {
   tasks: pmTask[];
 }
 
-interface pmTask {
+export interface pmTask {
   task_id: string;
   task_type: taskType;
   intent: intentType;

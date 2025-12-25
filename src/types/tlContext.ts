@@ -2,17 +2,13 @@ export interface tlContextList {
   tasks: tlContext[];
 }
 
-interface tlContext {
+export interface tlContext {
   task_id: string;
   task_type: taskType;
   intent: intentType;
   description: string;
   content: JSON;
-  page: string;
-  new_feature_name: string;
-  feature: string;
-  service: string;
-  component_id: string;
+  code_context: JSON;
 }
 
 type taskType = "ui_task" | "be_task" | "db_task";

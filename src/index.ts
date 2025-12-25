@@ -1,11 +1,11 @@
-import { readJson } from "./readJson";
-import { tlResolver } from "./tlResolver";
-import { tlAgent } from "./tlAgent";
-import { codegenContext } from "./codegenContext";
-import { generateCode } from "./generateCode";
-import { reIndex } from "./reIndex";
-import { reIndexPm } from "./reIndexPm";
-import { writeToJson } from "./writeToJson";
+import { generateCode } from "./services/codegenService/generateCode";
+import { codegenContext } from "./services/contextResolverService/codegenAgent/codegenContextResolver";
+import { tlResolver } from "./services/contextResolverService/tlAgent/tlResolver";
+import { readJson } from "./services/jsonFileService/readJson";
+import { writeToJson } from "./services/jsonFileService/writeToJson";
+import { reIndex } from "./services/reIndexService/reIndex";
+import { reIndexPm } from "./services/reIndexService/reIndexPm";
+import { tlAgent } from "./services/tlService/tlAgent";
 
 async function main() {
   const pm_message = readJson("./jsons/pm_msg.json");
@@ -26,7 +26,6 @@ async function main() {
 
 main();
 
-
 // schema in pm_context
 // ui_features (Belong to component directory):
 // {
@@ -35,19 +34,18 @@ main();
 //  "pages":[""],
 // "sub_components":[""],
 // }
-// 
+//
 // be_features (Belong to lib directory):
 // {"name":"",
 // "description":"",
 //  "services":[""],
 // }
-// 
+//
 // db_features
 // {
 // "table_name":"",
 // "description":""
 // }
-
 
 // Schema for ui_capabilities (componenets)
 // "hero": {
@@ -59,7 +57,7 @@ main();
 //  "used_in_component":[""],
 //  "components_used":[""],
 // }
-// 
+//
 // Schema for logic_capabilities
 // "logic_capabilities": {
 //   "services": {
@@ -90,8 +88,3 @@ main();
 //     }
 //   }
 // }
-// 
-// 
-// 
-// 
-// 

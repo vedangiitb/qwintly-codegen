@@ -3,7 +3,6 @@
     "project_info": {
       "name": "Not yet decided",
       "description": "Initial project created from a starter template with a landing page",
-      "role": "Not yet decided",
       "target_users": "Not yet decided"
     },
 
@@ -97,6 +96,21 @@
       "accessibility_required": true,
       "mobile_first": true,
       "performance_priority": "medium"
+    },
+
+    "ui_components": {
+      "button": {
+        "source": "shadcn",
+        "file": "components/ui/button.tsx"
+      },
+      "card": {
+        "source": "shadcn",
+        "file": "components/ui/card.tsx"
+      },
+      "input": {
+        "source": "shadcn",
+        "file": "components/ui/input.tsx"
+      }
     }
   },
 
@@ -119,6 +133,7 @@
 
       "layouts": {
         "root_layout": {
+          "route": "/",
           "file": "app/landing/layout.tsx",
           "description": "Landing page layout"
         }
@@ -146,21 +161,6 @@
             "pages": ["landing_page"]
           },
           "uses": ["Button"]
-        }
-      },
-
-      "allowed_ui_primitives": {
-        "button": {
-          "source": "shadcn",
-          "file": "components/ui/button.tsx"
-        },
-        "card": {
-          "source": "shadcn",
-          "file": "components/ui/card.tsx"
-        },
-        "input": {
-          "source": "shadcn",
-          "file": "components/ui/input.tsx"
         }
       }
     },

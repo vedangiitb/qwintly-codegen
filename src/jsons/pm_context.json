@@ -10,7 +10,12 @@
       "modify_styling"
     ],
 
-    "be_task_intents": ["add_new_service", "modify_service", "connect_ai","db_connection"],
+    "be_task_intents": [
+      "add_new_service",
+      "modify_service",
+      "connect_ai",
+      "db_connection"
+    ],
 
     "db_task_intents": [
       "add_new_table",
@@ -34,7 +39,12 @@
       "framework": "Next.js",
       "styling": "Tailwind CSS",
       "pages": [
-        { "name": "landing", "description": "Landing page", "features": [] }
+        {
+          "route": "/",
+          "name": "landing",
+          "description": "Landing page",
+          "features": []
+        }
       ],
       "ui_features": {},
       "be_features": {},
