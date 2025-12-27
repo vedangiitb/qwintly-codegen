@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { aiResponse } from "../../ai/ai";
-import { tlAgentPrompt } from "../../ai/prompts/tlAgentPrompt";
+import { aiResponse } from "../../infra/ai/ai";
+import { tlAgentPrompt } from "../../prompts/tlAgentPrompt";
 import { codeIndex } from "../../types/codeIndex/codeIndex";
 import { pmMessage } from "../../types/pmMessage";
 
@@ -27,11 +27,9 @@ export interface codegenTask {
 export const tlAgent = async (pmMessage: pmMessage, code_index: codeIndex) => {
   const tasks = pmMessage.tasks;
   try {
-    const response = await aiResponse(
-      tlAgentPrompt(tasks, code_index),
-      [],
-      CreateTasksSchema
-    );
+    const response = await aiResponse(tlAgentPrompt(tasks, code_index), {
+      schema: CreateTasksSchema,
+    });
     console.log(response);
     if (!response?.text)
       throw new Error("No response from AI. Please try again.");

@@ -1,6 +1,6 @@
-import { Type } from "@google/genai";
+import { FunctionDeclaration, Type } from "@google/genai";
 
-export const writeCodeSchema = {
+export const writeCodeSchema: FunctionDeclaration = {
   name: "write_code",
   description: "Write code to a file",
   parameters: {
@@ -8,8 +8,8 @@ export const writeCodeSchema = {
     properties: {
       path: { type: Type.STRING },
       code: { type: Type.STRING },
-      imports: { type: Type.ARRAY, items: { type: Type.STRING } },
+      description: { type: Type.STRING },
     },
-    required: ["path", "code", "imports"],
+    required: ["path", "code", "description"],
   },
 };

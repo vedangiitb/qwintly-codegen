@@ -1,4 +1,4 @@
-import { codegenContextInterface } from "../../types/codegenContext/codegenContext";
+import { codegenContextInterface } from "../../../types/codegenContext/codegenContext";
 
 export const codegenPrompt = (context: codegenContextInterface) => {
   return `
@@ -52,9 +52,8 @@ You must strictly follow:
 1. Do NOT introduce breaking changes
 2. Do NOT modify unrelated logic
 3. Do NOT invent APIs, routes, or components
-4. Do NOT add TODOs or placeholder logic
-5. TypeScript must be valid and strict
-6. Output must be production-ready
+4. TypeScript must be valid and strict
+5. Output must be production-ready
 
 ---
 
@@ -92,13 +91,13 @@ You MUST respond by **calling the function \`write_code\`**.
 ### Function Call Rules
 - Call \`write_code\` exactly once
 - Do NOT include any text outside the function call
-- Do NOT explain your changes
 - Do NOT wrap output in markdown
 
 ### Function Arguments
 - **path** → must be exactly:
   "${context.pagePath}"
 - **code** → the FULL final file contents
+- **description** → a human-readable description of the code (should also include previous description in case of already existing file)
 
 Your code outputs will be written **as is** to the specified file path.
 

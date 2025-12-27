@@ -6,7 +6,7 @@ import {
 } from "@google/genai";
 import zodToJsonSchema from "zod-to-json-schema";
 import type { ZodSchema } from "zod";
-import { GOOGLE_GENAI_API_KEY } from "../config/env";
+import { GOOGLE_GENAI_API_KEY } from "../../config/env";
 
 if (!GOOGLE_GENAI_API_KEY) {
   throw new Error("GOOGLE_GENAI_API_KEY is not defined");

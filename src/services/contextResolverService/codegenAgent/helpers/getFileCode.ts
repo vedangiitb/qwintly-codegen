@@ -1,5 +1,6 @@
-export const getFileCode = (isNewFile: boolean, filePath: string) => {
+import { readFile } from "../../../../infra/fs/workspace";
+
+export const getFileCode = async (isNewFile: boolean, filePath: string) => {
   if (isNewFile) return "";
-  //   TODO: Implement getting the file code
-  return `// ${filePath}`;
+  return await readFile(filePath);
 };

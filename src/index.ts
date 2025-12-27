@@ -14,7 +14,7 @@ async function main() {
     if (!codegen_taskList) throw new Error("No codegen_taskList");
     console.log(codegen_taskList);
     for (const task of codegen_taskList) {
-      const codegen_context = codegenContext(code_index, task);
+      const codegen_context = await codegenContext(code_index, task);
       await generateCode(codegen_context);
     }
     const new_code_index = await reIndex();
