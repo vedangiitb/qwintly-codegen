@@ -1,4 +1,4 @@
-import { codegenContextInterface } from "../../../types/codegenContext/codegenContext";
+import { codegenContextInterface } from "../types/codegenContext/codegenContext";
 
 export const codegenPrompt = (context: codegenContextInterface) => {
   return `

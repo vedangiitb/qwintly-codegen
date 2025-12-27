@@ -1,5 +1,5 @@
-import { codeIndex } from "../../../types/codeIndex/codeIndex";
-import { pmTask } from "../../../types/pmMessage";
+import { codeIndex } from "../types/codeIndex/codeIndex";
+import { pmTask } from "../types/pmMessage";
 
 export const tlAgentPrompt = (
   pmTasks: pmTask[],
